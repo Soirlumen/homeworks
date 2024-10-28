@@ -7,21 +7,21 @@ void vypiš(auto a, auto b){
     std::cout<<a<<"x "<<b<<" korun ceskych"<<std::endl;
 }
 
-int počítadlo(auto a, int b){
-    a=ToInt
+int celoděl(int a, int b){
     return a/b;
 }
-void kolikjakýchbankovekv2(int b){
+void kolikjakýchbankovekv2(std::string l){
+    int b=stoi(l);
     int i=indexbank;
     while (i>-1){
-        vypiš(počítadlo(b,bankovky[i]),bankovky[i]);
-        b-=počítadlo(b,bankovky[i])*bankovky[i];
+        vypiš(celoděl(b,bankovky[i]),bankovky[i]);
+        b-=celoděl(b,bankovky[i])*bankovky[i];
         i-=1;
         }
     }
 int main()
 {
-    kolikjakýchbankovekv2(13683);
+    kolikjakýchbankovekv2("13683");
     return 0;
 }
 
