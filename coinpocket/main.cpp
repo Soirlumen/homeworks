@@ -10,8 +10,21 @@ void vypiš(auto a, auto b){
 int celoděl(int a, int b){
     return a/b;
 }
-void kolikjakýchbankovekv2(std::string l){
+int vstup(){
+    std::string l;
+    std::cout<<"zadej cele kladne cislo: ";
+    std::cin>>l;
     int b=stoi(l);
+    if (b>0){
+        return b;
+    }
+    else{
+        std::cout<<" zadane cislo '"<<b<<"neni cele kladne, zkus to znovu"<<std::endl;
+        vstup();
+    }
+}
+void kolikjakýchbankovekv2(){
+    int b=vstup();
     int i=indexbank;
     while (i>-1){
         vypiš(celoděl(b,bankovky[i]),bankovky[i]);
@@ -21,25 +34,6 @@ void kolikjakýchbankovekv2(std::string l){
     }
 int main()
 {
-    kolikjakýchbankovekv2("13683");
+    kolikjakýchbankovekv2();
     return 0;
 }
-
-/*
-
-void kolikjakýchbankovekv1(int b){
-    int i=10;
-    int c=0;
-    while (i>-1){
-        if(b>=bankovky[i]){
-            b-=bankovky[i];
-            c+=1;
-        }
-        else{
-            vypiš(c,bankovky[i]);
-            c=0;
-            i-=1;
-        }
-    }
-}
-*/
